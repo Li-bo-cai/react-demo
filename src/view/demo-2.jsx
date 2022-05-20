@@ -1,23 +1,37 @@
-// function写法
-import React from "react";
-function Demo2() {
-   let state={
-        name : "张三",
-        num : 1
+import React, { Component } from "react";
+import ErrorBoundary from './ErrorBoundary'
+import Prortals from './Portals'
+class Demo2 extends Component {
+    state = {
+        user: { name: 'react' },
+        showModal: true
     }
-    setTimeout(() => {
-        state.name = '李四'
-    }, 1000)
-    const addClick =  function(){
-        console.log(1234);
+    onClick = () => {
+        this.setState({ user: null })
     }
-    return (
-        <div>
-            <div>{this.state.name}</div>
-            <button onClick={addClick}>{this.state.num}</button>
-        </div>
-        
-    )
+    closeModel = () => {
+        this.setState({ showModal: false })
+    }
+    render() {
+        return (
+            <div>
+                <span>----------------------ErrorBoundary-----------------------------</span>
+                <ErrorBoundary>
+                    <Profile user={this.state.user}></Profile>
+                    <button onClick={this.onClick}>更新</button>
+                </ErrorBoundary>
+                <span>----------------------Prortals-----------------------------</span>
+                {/* <div>
+                    <h2>Dashboard</h2>
+                    {this.state.showModal && (
+                        <Prortals onClose={this.closeModel}>Modal Dialog</Prortals>
+                    )}
+                </div> */}
+            </div>
+        )
+    }
 }
+
+const Profile = ({ user }) => <div>name:{user.name}</div>
 
 export default Demo2

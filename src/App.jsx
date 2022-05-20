@@ -8,7 +8,7 @@ function App() {
         <Demo1 />
       </div>
       <div>
-        {/* <Demo2 /> */}
+        <Demo2 />
       </div>
     </div>
 
