@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ErrorBoundary from './ErrorBoundary'
 import Prortals from './Portals'
+import LifeCycle from './life-cycle'
 class Demo2 extends Component {
     state = {
         user: { name: 'react' },
@@ -15,18 +16,20 @@ class Demo2 extends Component {
     render() {
         return (
             <div>
-                <span>----------------------ErrorBoundary-----------------------------</span>
+                <div>----------------------ErrorBoundary-----------------------------</div>
                 <ErrorBoundary>
                     <Profile user={this.state.user}></Profile>
                     <button onClick={this.onClick}>更新</button>
                 </ErrorBoundary>
-                <span>----------------------Prortals-----------------------------</span>
+                <div>----------------------Prortals-----------------------------</div>
                 {/* <div>
                     <h2>Dashboard</h2>
                     {this.state.showModal && (
                         <Prortals onClose={this.closeModel}>Modal Dialog</Prortals>
                     )}
                 </div> */}
+                <div>----------------------LifeCycle------------------------------------</div>
+                <LifeCycle value="2"></LifeCycle>
             </div>
         )
     }

@@ -1,6 +1,5 @@
-import './assets/css/App.css';
-import Demo1 from './view/demo-1'
-import Demo2 from './view/demo-2'
+import Demo1 from './views/demo1'
+import Demo2 from './views/demo2'
 function App() {
   return (
     <div>
