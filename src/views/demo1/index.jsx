@@ -10,11 +10,11 @@ class Demo1 extends Component {
             adress: {
                 ts: ''
             },
-            selectValue:'two',
-            checkValue:{
-                react:'',
-                redux:'',
-                mobx:''
+            selectValue: 'two',
+            checkValue: {
+                react: '',
+                redux: '',
+                mobx: ''
             }
         }
     }
@@ -48,14 +48,14 @@ class Demo1 extends Component {
         }
         this.setState({ form: name })
     }
-    checkChange = (event)=>{
+    checkChange = (event) => {
         const target = event.target
         let name = this.state.form
         name.checkValue[target.name] = target.value
         console.log(this.state.form);
-        this.setState({form:name})
+        this.setState({ form: name })
     }
-    changeRef= (event)=>{
+    changeRef = (event) => {
         console.log(this.input.value);
         console.log(this.input);
     }
@@ -91,12 +91,12 @@ class Demo1 extends Component {
                         <input type="checkbox" name="mobx" value="mobx" checked={this.state.form.checkValue.mobx} onChange={this.checkChange} id="" />
                     </label>
 
-                    <input type="text" defaultValue="44444" ref={(input)=>this.input = input} onChange={this.changeRef}></input>
+                    <input type="text" defaultValue="44444" ref={(input) => this.input = input} onChange={this.changeRef}></input>
                 </form>
                 <div>{this.state.form.name}{this.state.form.age}{this.state.form.adress.ts}</div>
             </div>
         )
     }
 }
- 
+
 export default Demo1

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class LifeCycle extends Component {
     constructor(props) {
@@ -8,6 +9,12 @@ class LifeCycle extends Component {
         }
         console.log("constructor");
     }
+
+    static propTypes = {
+        value: PropTypes.number.isRequired,
+    }
+
+
     componentDidMount() {
         console.log("组件挂载完毕-----------", "componentDidMount");
     }
@@ -19,6 +26,7 @@ class LifeCycle extends Component {
     }
     shouldComponentUpdate() {
         console.log("shouldComponentUpdate");
+        return true
     }
     getSnapshotBeforeUpdate() {
         console.log("组件更新之前-----------", "getSnapshotBeforeUpdate", "在最近一次渲染输出（提交到 DOM 节点）之前调用");

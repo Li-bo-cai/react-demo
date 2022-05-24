@@ -29,7 +29,7 @@ class Demo2 extends Component {
                     )}
                 </div> */}
                 <div>----------------------LifeCycle------------------------------------</div>
-                <LifeCycle value="2"></LifeCycle>
+                <LifeCycle value={2}></LifeCycle>
             </div>
         )
     }
