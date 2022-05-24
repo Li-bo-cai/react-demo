@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PubSub from "pubsub-js";
 import PropTypes from "prop-types";
 
 class LifeCycle extends Component {
@@ -39,6 +40,7 @@ class LifeCycle extends Component {
         let num = this.state.value
         num += 1;
         this.setState({ value: num })
+        PubSub.publish('changePbusub', { data: '我是pubsub发出来的消息' })
     }
     render() {
         console.log("render");

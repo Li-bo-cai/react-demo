@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ErrorBoundary from './ErrorBoundary'
 import Prortals from './Portals'
 import LifeCycle from './life-cycle'
+import Pubsubdemo from "./Pubsubdemo";
 class Demo2 extends Component {
     state = {
         user: { name: 'react' },
@@ -30,6 +31,8 @@ class Demo2 extends Component {
                 </div> */}
                 <div>----------------------LifeCycle------------------------------------</div>
                 <LifeCycle value={2}></LifeCycle>
+                <div>-----------------------Pubsubdemo------------------------------</div>
+                <Pubsubdemo></Pubsubdemo>
             </div>
         )
     }
