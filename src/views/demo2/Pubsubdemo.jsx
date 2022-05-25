@@ -6,10 +6,13 @@ export default class Pubsubdemo extends Component {
         title: '我是本地消息'
     }
     componentDidMount() {
-        PubSub.subscribe('changePbusub', (_, data) => {
+        this.token = PubSub.subscribe('changePbusub', (_, data) => {
             this.setState({ title: data.data })
             console.log(data);
         })
+    }
+    componentWillUnmount() {
+        PubSub.unsubscribe(this.token)
     }
     render() {
         return (
