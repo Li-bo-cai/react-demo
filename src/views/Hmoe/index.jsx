@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import Layout from '../Layout'
 
 
 export default class index extends Component {
@@ -10,7 +11,7 @@ export default class index extends Component {
         <Link to="/router2">demo2</Link>
         <Link to="/router3">demo3</Link>
         <div>
-          <Outlet></Outlet>
+          <Layout />
         </div>
       </div>
     )

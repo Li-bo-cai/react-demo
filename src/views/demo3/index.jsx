@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Link, Outlet, useNavigate } from 'react-router-dom'
+import { Link, Outlet, useNavigate, Route, Routes } from 'react-router-dom'
+import Router1 from './router1'
 import Router2 from './router2'
 
 export const widthNavigation = (Child) => {
@@ -11,6 +12,9 @@ class index extends Component {
 
     goPush = () => {
         this.props.navigate('/router1')
+    }
+    goPushLogin = () => {
+        this.props.navigate('/login', { state: { name: '张三', age: 18 } })
     }
     render() {
         return (
@@ -28,6 +32,7 @@ class index extends Component {
                         </Routes> */}
                     </div>
                     <button onClick={this.goPush}>跳转到Router1</button>
+                    <button onClick={this.goPushLogin}>跳转到Login</button>
                 </div>
             </div >
         )
