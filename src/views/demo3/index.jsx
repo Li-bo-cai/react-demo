@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
-import { Link, Outlet, useNavigate, Route, Routes } from 'react-router-dom'
-import Router1 from './router1'
-import Router2 from './router2'
+import { Link, Outlet, useNavigate } from 'react-router-dom'
 
 export const widthNavigation = (Child) => {
     return (props) => <Child {...props} navigate={useNavigate()}></Child>

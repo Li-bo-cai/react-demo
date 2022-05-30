@@ -6,6 +6,7 @@ import Login from '../views/Login/Login'
 const Demo1 = lazy(() => import('../views/demo1'))
 const Demo2 = lazy(() => import('../views/demo2'))
 const Demo3 = lazy(() => import('../views/demo3'))
+const Demo4 = lazy(() => import('../views/demo4'))
 
 const lazyLoad = (children) => {
     return <Suspense fallback={<>loading</>}>
@@ -27,7 +28,8 @@ const router = [
                     { index: true, element: <Router1 /> },
                     { path: "/router3/router2", element: <Router2 /> }
                 ]
-            }
+            },
+            { path: 'router4', element: lazyLoad(<Demo4 />) }
         ]
     },
     {

@@ -10,7 +10,7 @@ export default function Login() {
   console.log(location);
 
   const login = () => {
-    navigate('/')
+    navigate('/', { replace: true })
   }
   return (
     <div>
