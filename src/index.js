@@ -5,7 +5,8 @@ import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import store from './redux/store';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const contenter = document.getElementById('root')
+const root = ReactDOM.createRoot(contenter);
 
 root.render(
   <React.StrictMode>
@@ -16,6 +17,7 @@ root.render(
 );
 
 store.subscribe(() => {
+  console.log(1234);
   root.render(
     <React.StrictMode>
       <BrowserRouter>
@@ -23,7 +25,6 @@ store.subscribe(() => {
       </BrowserRouter>
     </React.StrictMode>
   );
-
 })
 
 // If you want to start measuring performance in your app, pass a function

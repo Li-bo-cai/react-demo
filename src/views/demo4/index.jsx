@@ -19,9 +19,9 @@ export default class index extends Component {
 
     }
     componentDidMount() {
-        store.subscribe(() => {
-            this.setState({})
-        })
+        // store.subscribe(() => {
+        //     this.setState({})
+        // })
     }
     render() {
         return (

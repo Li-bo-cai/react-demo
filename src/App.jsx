@@ -17,7 +17,7 @@ function App() {
       console.log(location, 'leave');
     }
   }, [location.pathname]);
-
+  console.log('abcd');
   return (
     useRoutes(router)
   )
