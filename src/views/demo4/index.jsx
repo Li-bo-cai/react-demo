@@ -5,18 +5,23 @@ export default class index extends Component {
 
     increment = () => {
         const { value } = this.selectNumber
-        store.dispatch({ type: 'increment', data: value })
+        store.dispatch({ type: 'increment', data: value * 1 })
     }
     decrement = () => {
         const { value } = this.selectNumber
-        store.dispatch({ type: 'decrement', data: value })
+        store.dispatch({ type: 'decrement', data: value * 1 })
     }
     incrementIfOdd = () => {
         const { value } = this.selectNumber
-        store.dispatch({ type: 'incrementIfOdd', data: value })
+        store.dispatch({ type: 'incrementIfOdd', data: value * 1 })
     }
     incrementAsync = () => {
 
+    }
+    componentDidMount() {
+        store.subscribe(() => {
+            this.setState({})
+        })
     }
     render() {
         return (

@@ -6,6 +6,7 @@ import { BrowserRouter } from 'react-router-dom';
 import store from './redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
     <BrowserRouter>
@@ -22,6 +23,7 @@ store.subscribe(() => {
       </BrowserRouter>
     </React.StrictMode>
   );
+
 })
 
 // If you want to start measuring performance in your app, pass a function
