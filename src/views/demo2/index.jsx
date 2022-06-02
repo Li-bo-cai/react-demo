@@ -23,12 +23,12 @@ class Demo2 extends Component {
                     <button onClick={this.onClick}>更新</button>
                 </ErrorBoundary>
                 <div>----------------------Prortals-----------------------------</div>
-                {/* <div>
+                <div>
                     <h2>Dashboard</h2>
                     {this.state.showModal && (
                         <Prortals onClose={this.closeModel}>Modal Dialog</Prortals>
                     )}
-                </div> */}
+                </div>
                 <div>----------------------LifeCycle------------------------------------</div>
                 <LifeCycle value={2}></LifeCycle>
                 <div>-----------------------Pubsubdemo------------------------------</div>
