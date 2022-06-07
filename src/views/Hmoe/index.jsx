@@ -12,6 +12,7 @@ export default class index extends Component {
         <Link to="/router3">demo3</Link>
         <Link to="/router4">demo4</Link>
         <Link to="/router5">demo5</Link>
+        <Link to="/router6">demo6</Link>
         <div>
           <Layout />
         </div>
