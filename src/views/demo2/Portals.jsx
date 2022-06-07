@@ -1,15 +1,14 @@
 import React, { Component } from "react";
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 
-let container = document.createElement("div");
-document.body.appendChild(container)
-class Portals extends Component {
+class PortalsDemo extends Component {
     constructor(props) {
         super(props)
-        this.container = container
+        this.container = document.createElement("div");
     }
     componentDidMount() {
         console.log("我渲染了");
+        document.body.appendChild(this.container)
     }
     componentWillUnmount() {
         console.log("卸载前");
@@ -28,4 +27,4 @@ class Portals extends Component {
     }
 }
 
-export default Portals
+export default PortalsDemo

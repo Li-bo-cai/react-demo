@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ErrorBoundary from './ErrorBoundary'
-import Prortals from './Portals'
+import PortalsDemo from './Portals'
 import LifeCycle from './life-cycle'
 import Pubsubdemo from "./Pubsubdemo";
 class Demo2 extends Component {
@@ -26,7 +26,7 @@ class Demo2 extends Component {
                 <div>
                     <h2>Dashboard</h2>
                     {this.state.showModal && (
-                        <Prortals onClose={this.closeModel}>Modal Dialog</Prortals>
+                        <PortalsDemo onClose={this.closeModel}>Modal Dialog(我是独立于root的节点元素)</PortalsDemo>
                     )}
                 </div>
                 <div>----------------------LifeCycle------------------------------------</div>
