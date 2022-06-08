@@ -6,7 +6,19 @@ import { useGetStudentsQuery } from '../../store/studentAp'
 
 export default function Demo6() {
 
-    const { data, isSuccess, isLoading } = useGetStudentsQuery()
+    const { data, isSuccess, isLoading } = useGetStudentsQuery(null, {
+        //useQuery可以接收有个对象作为第二个参数，通过该对象可以对请求进行配置
+        selectFromResult: result => {
+            if (result.data) {
+                result.data = result.data.filter(item => item)
+            }
+        }, //用来指定useQuery返回的结果
+        pollingInterval: 0,  //  设置轮询的间隔，单位毫秒  如果为0则表示不轮询
+        skip: false, // 是否跳过该请求   默认为false
+        refetchOnMountOrArgChange: false, //设置是否每次都重新加载数据  false正常使用缓存  true 每次都重载数据  数字  数据缓存时间 （秒）
+        refetchOnFocus: false,  //是否在重新获取焦点时重载数据
+        refetchOnReconnect: false, //是否在重新连接后重载数据 
+    })
 
     const { student, school } = useSelector(state => state)
 

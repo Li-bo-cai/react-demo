@@ -11,9 +11,14 @@ const studentApi = createApi({
                 query() {
                     //用来指定请求的子路径
                     return 'student'
-                }
+                },
+                transformResponse(baseQueryRetrurnValue) {
+                    //返回数据的格式
+                    return baseQueryRetrurnValue
+                },
+                keepUnusedDataFor: 0,//是否缓存请求数据 单位秒
             }),    //查询
-            // updateStudent: build.mutation()   //修改
+            // updateStudent: build.mutation()   //修改   
         }
     }
 })
