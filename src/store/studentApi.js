@@ -22,7 +22,7 @@ const studentApi = createApi({
         }
     }
 })
-console.log(studentApi);
+// console.log(studentApi);
 
 export const { useGetStudentsQuery } = studentApi
 

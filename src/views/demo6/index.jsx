@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setName } from '../../store/stuSlice'
 import { setName as setSchoolName } from '../../store/schoolSlice'
-import { useGetStudentsQuery } from '../../store/studentAp'
+import { useGetStudentsQuery } from '../../store/studentApi'
 
 export default function Demo6() {
 
@@ -19,6 +19,7 @@ export default function Demo6() {
         refetchOnFocus: false,  //是否在重新获取焦点时重载数据
         refetchOnReconnect: false, //是否在重新连接后重载数据 
     })
+    console.log(data, isSuccess, isLoading);
 
     const { student, school } = useSelector(state => state)
 

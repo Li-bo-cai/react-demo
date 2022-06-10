@@ -9,6 +9,7 @@ const Demo3 = lazy(() => import('../views/demo3'))
 const Demo4 = lazy(() => import('../views/demo4'))
 const Demo5 = lazy(() => import('../views/demo5'))
 const Demo6 = lazy(() => import('../views/demo6'))
+const Demo7 = lazy(() => import('../views/demo7'))
 
 const lazyLoad = (children) => {
     return <Suspense fallback={<>loading</>}>
@@ -33,7 +34,8 @@ const router = [
             },
             { path: 'router4', element: lazyLoad(<Demo4 />) },
             { path: 'router5', element: lazyLoad(<Demo5 />) },
-            { path: 'router6', element: lazyLoad(<Demo6 />) }
+            { path: 'router6', element: lazyLoad(<Demo6 />) },
+            { path: 'router7', element: lazyLoad(<Demo7 />) },
         ]
     },
     {

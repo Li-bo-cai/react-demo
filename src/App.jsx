@@ -12,9 +12,9 @@ const Access = (canAccess, children) => {
 function App() {
   const location = useLocation()
   useEffect(() => {
-    console.log(location, "enter");
+    // console.log(location, "enter");
     return () => {
-      console.log(location, 'leave');
+      // console.log(location, 'leave');
     }
   }, [location]);
   return (
