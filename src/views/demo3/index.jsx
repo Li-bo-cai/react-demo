@@ -1,13 +1,7 @@
 import React, { Component } from 'react'
 import { Link, Outlet, useNavigate } from 'react-router-dom'
 
-export const widthNavigation = (Child) => {
-    return (props) => <Child {...props} navigate={useNavigate()}></Child>
-}
-
-
 class index extends Component {
-
     goPush = () => {
         this.props.navigate('/router1')
     }
@@ -37,4 +31,7 @@ class index extends Component {
     }
 }
 
+export const widthNavigation = (Child) => {
+    return (props) => <Child {...props} navigate={useNavigate()}></Child>
+}
 export default widthNavigation(index)

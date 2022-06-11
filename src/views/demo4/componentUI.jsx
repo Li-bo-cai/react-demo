@@ -1,35 +1,31 @@
 import React, { Component } from 'react'
-import { createIncrement, createDecrement, createIncrementIfOdd, createIncrementAsync } from '../../redux/count_action'
-import store from '../../redux/store'
-import ComponentUI from './componentUI'
 
-export default class index extends Component {
+import { connect } from "react-redux";
+import { createIncrement, createDecrement, createIncrementIfOdd, createIncrementAsync } from '../../redux/count_action'
+
+class ComponentUI extends Component {
 
     increment = () => {
         const { value } = this.selectNumber
-        store.dispatch(createIncrement(value * 1))
+        this.props.increment(value * 1)
     }
     decrement = () => {
         const { value } = this.selectNumber
-        store.dispatch(createDecrement(value * 1))
+        this.props.decrement(value * 1)
     }
     incrementIfOdd = () => {
         const { value } = this.selectNumber
-        store.dispatch(createIncrementIfOdd(value * 1))
+        this.props.incrementIfOdd(value * 1)
     }
     incrementAsync = () => {
         const { value } = this.selectNumber
-        store.dispatch(createIncrementAsync(value * 1))
+        this.props.incrementAsync(value * 1)
     }
-    componentDidMount() {
-        store.subscribe(() => {
-            this.setState({})
-        })
-    }
+
     render() {
         return (
             <div>
-                <h2>当前值为{store.getState()}</h2>
+                <h2>当前值为{this.props.count}</h2>
                 <select ref={c => this.selectNumber = c}>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -39,9 +35,26 @@ export default class index extends Component {
                 <button onClick={this.decrement}>-</button>
                 <button onClick={this.incrementIfOdd}>当前求和为奇数再加</button>
                 <button onClick={this.incrementAsync}>异步加</button>
-                <div>------------------------------------------------------------------</div>
-                <ComponentUI store={store}></ComponentUI>
             </div>
         )
     }
 }
+
+
+export default connect(
+    (state) => ({ count: state }),
+    // mapDispatchToProps的一般写法
+    // (dispatch) => ({
+    //     increment: (data) => dispatch(createIncrement(data)),
+    //     decrement: (data) => dispatch(createDecrement(data)),
+    //     incrementIfOdd: (data) => dispatch(createIncrementIfOdd(data)),
+    //     incrementAsync: (data) => dispatch(createIncrementAsync(data))
+    // })
+    // mapDispatchToProps的简单写法
+    {
+        increment: createIncrement,
+        decrement: createDecrement,
+        incrementIfOdd: createIncrementIfOdd,
+        incrementAsync: createIncrementAsync
+    }
+)(ComponentUI)
