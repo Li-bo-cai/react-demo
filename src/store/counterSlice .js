@@ -7,19 +7,9 @@ export const selectCount = (state) => state.counter.value;  //此处返回的相
 
 const loadPicAPI = () => api.get('/knowledge/index')    //此处返回的是请求方法
 
-// export const incrementAsync = (amount) => {
-//     return (dispatch, getState) => {
-//         console.log(getState());
-//         setTimeout(() => {
-//             dispatch(incrementByAmount(amount));
-//         }, 1000);
-//     };
-// }
-
-
 export const incrementAsync = createAsyncThunk('incrementAsync', async (params, { dispatch }) => {
     const res = await loadPicAPI()
-    dispatch(incrementByAmount(params));
+    // dispatch(incrementByAmount(params));
     return res
 })
 
@@ -44,6 +34,14 @@ const counterSlice = createSlice({
     // 可以额外的触发其他slice中的数据关联改变
     extraReducers: builder => {
         builder.addCase(incrementAsync.pending, (state, action) => {
+            state.value = '请求中。。。'
+            console.log(state, action);
+        })
+        builder.addCase(incrementAsync.fulfilled, (state, action) => {
+            console.log(state, action);
+            state.value = 1
+        })
+        builder.addCase(incrementAsync.rejected, (state, action) => {
             console.log(state, action);
         })
     }
