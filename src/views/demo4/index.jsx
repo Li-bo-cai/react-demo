@@ -29,7 +29,7 @@ export default class index extends Component {
     render() {
         return (
             <div>
-                <h2>当前值为{store.getState()}</h2>
+                <h2>当前值为{store.getState().count}</h2>
                 <select ref={c => this.selectNumber = c}>
                     <option value="1">1</option>
                     <option value="2">2</option>

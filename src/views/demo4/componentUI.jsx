@@ -42,7 +42,7 @@ class ComponentUI extends Component {
 
 
 export default connect(
-    (state) => ({ count: state }),
+    (state) => ({ count: state.count }),
     // mapDispatchToProps的一般写法
     // (dispatch) => ({
     //     increment: (data) => dispatch(createIncrement(data)),
